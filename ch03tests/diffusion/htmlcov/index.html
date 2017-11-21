@@ -1,0 +1,1193 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Coverage report</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.ba-throttle-debounce.min.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="coverage_html.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(coverage.index_ready);
+    </script>
+</head>
+<body class="indexfile">
+
+<div id="header">
+    <div class="content">
+        <h1>Coverage report:
+            <span class="pc_cov">18%</span>
+        </h1>
+
+        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
+
+        <form id="filter_container">
+            <input id="filter" type="text" value="" placeholder="filter..." />
+        </form>
+    </div>
+</div>
+
+<div class="help_panel">
+    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
+    <p class="legend">Hot-keys on this page</p>
+    <div>
+    <p class="keyhelp">
+        <span class="key">n</span>
+        <span class="key">s</span>
+        <span class="key">m</span>
+        <span class="key">x</span>
+        
+        <span class="key">c</span> &nbsp; change column sorting
+    </p>
+    </div>
+</div>
+
+<div id="index">
+    <table class="index">
+        <thead>
+            
+            <tr class="tablehead" title="Click to sort">
+                <th class="name left headerSortDown shortkey_n">Module</th>
+                <th class="shortkey_s">statements</th>
+                <th class="shortkey_m">missing</th>
+                <th class="shortkey_x">excluded</th>
+                
+                <th class="right shortkey_c">coverage</th>
+            </tr>
+        </thead>
+        
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td>30857</td>
+                <td>25405</td>
+                <td>13</td>
+                
+                <td class="right" data-ratio="5452 30857">18%</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            
+            <tr class="file">
+                <td class="name left"><a href="__init___py.html">__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="model_py.html">model.py</a></td>
+                <td>10</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 10">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="test_model_py.html">test_model.py</a></td>
+                <td>31</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="31 31">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest__argcomplete_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/_argcomplete.py</a></td>
+                <td>33</td>
+                <td>32</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="1 33">3%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest__code_code_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/_code/code.py</a></td>
+                <td>571</td>
+                <td>540</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="31 571">5%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest__code_source_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/_code/source.py</a></td>
+                <td>280</td>
+                <td>273</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 280">2%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_assertion___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/assertion/__init__.py</a></td>
+                <td>73</td>
+                <td>66</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 73">10%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_assertion_rewrite_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/assertion/rewrite.py</a></td>
+                <td>565</td>
+                <td>489</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="76 565">13%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_cacheprovider_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/cacheprovider.py</a></td>
+                <td>139</td>
+                <td>117</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="22 139">16%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_capture_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/capture.py</a></td>
+                <td>328</td>
+                <td>270</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="58 328">18%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_compat_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/compat.py</a></td>
+                <td>124</td>
+                <td>101</td>
+                <td>2</td>
+                
+                <td class="right" data-ratio="23 124">19%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_config_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/config.py</a></td>
+                <td>863</td>
+                <td>728</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="135 863">16%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_debugging_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/debugging.py</a></td>
+                <td>88</td>
+                <td>81</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 88">8%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_doctest_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/doctest.py</a></td>
+                <td>174</td>
+                <td>165</td>
+                <td>11</td>
+                
+                <td class="right" data-ratio="9 174">5%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_fixtures_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/fixtures.py</a></td>
+                <td>654</td>
+                <td>526</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="128 654">20%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_helpconfig_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/helpconfig.py</a></td>
+                <td>96</td>
+                <td>88</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="8 96">8%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_junitxml_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/junitxml.py</a></td>
+                <td>229</td>
+                <td>227</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 229">1%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_main_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/main.py</a></td>
+                <td>525</td>
+                <td>316</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="209 525">40%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_mark_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/mark.py</a></td>
+                <td>168</td>
+                <td>160</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="8 168">5%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_monkeypatch_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/monkeypatch.py</a></td>
+                <td>125</td>
+                <td>113</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="12 125">10%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_nose_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/nose.py</a></td>
+                <td>42</td>
+                <td>28</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="14 42">33%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_pastebin_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/pastebin.py</a></td>
+                <td>61</td>
+                <td>59</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 61">3%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_python_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/python.py</a></td>
+                <td>852</td>
+                <td>655</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="197 852">23%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_resultlog_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/resultlog.py</a></td>
+                <td>86</td>
+                <td>84</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 86">2%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_runner_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/runner.py</a></td>
+                <td>365</td>
+                <td>251</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="114 365">31%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_setuponly_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/setuponly.py</a></td>
+                <td>46</td>
+                <td>45</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="1 46">2%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_setupplan_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/setupplan.py</a></td>
+                <td>12</td>
+                <td>11</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="1 12">8%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_skipping_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/skipping.py</a></td>
+                <td>252</td>
+                <td>213</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="39 252">15%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_terminal_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/terminal.py</a></td>
+                <td>452</td>
+                <td>341</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="111 452">25%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_tmpdir_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/tmpdir.py</a></td>
+                <td>62</td>
+                <td>55</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 62">11%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_unittest_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/unittest.py</a></td>
+                <td>168</td>
+                <td>161</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 168">4%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages__pytest_vendored_packages_pluggy_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/_pytest/vendored_packages/pluggy.py</a></td>
+                <td>429</td>
+                <td>291</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="138 429">32%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy___config___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/__config__.py</a></td>
+                <td>22</td>
+                <td>12</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 22">45%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/__init__.py</a></td>
+                <td>58</td>
+                <td>7</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="51 58">88%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy__distributor_init_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/_distributor_init.py</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="0 0">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy__globals_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/_globals.py</a></td>
+                <td>11</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 11">91%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy__import_tools_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/_import_tools.py</a></td>
+                <td>226</td>
+                <td>204</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="22 226">10%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_add_newdocs_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/add_newdocs.py</a></td>
+                <td>276</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="276 276">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_compat___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/compat/__init__.py</a></td>
+                <td>8</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="8 8">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_compat__inspect_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/compat/_inspect.py</a></td>
+                <td>70</td>
+                <td>19</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="51 70">73%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_compat_py3k_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/compat/py3k.py</a></td>
+                <td>78</td>
+                <td>50</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="28 78">36%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/__init__.py</a></td>
+                <td>73</td>
+                <td>9</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="64 73">88%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core__internal_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/_internal.py</a></td>
+                <td>355</td>
+                <td>297</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="58 355">16%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core__methods_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/_methods.py</a></td>
+                <td>87</td>
+                <td>63</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="24 87">28%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_arrayprint_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/arrayprint.py</a></td>
+                <td>378</td>
+                <td>316</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="62 378">16%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_defchararray_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/defchararray.py</a></td>
+                <td>364</td>
+                <td>238</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="126 364">35%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_einsumfunc_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/einsumfunc.py</a></td>
+                <td>311</td>
+                <td>298</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="13 311">4%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_fromnumeric_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/fromnumeric.py</a></td>
+                <td>277</td>
+                <td>206</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="71 277">26%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_function_base_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/function_base.py</a></td>
+                <td>69</td>
+                <td>59</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 69">14%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_getlimits_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/getlimits.py</a></td>
+                <td>136</td>
+                <td>98</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="38 136">28%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_info_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/info.py</a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_machar_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/machar.py</a></td>
+                <td>187</td>
+                <td>178</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="9 187">5%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_memmap_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/memmap.py</a></td>
+                <td>98</td>
+                <td>82</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="16 98">16%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_numeric_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/numeric.py</a></td>
+                <td>579</td>
+                <td>427</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="152 579">26%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_numerictypes_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/numerictypes.py</a></td>
+                <td>388</td>
+                <td>113</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="275 388">71%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_records_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/records.py</a></td>
+                <td>355</td>
+                <td>314</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="41 355">12%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_core_shape_base_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/core/shape_base.py</a></td>
+                <td>66</td>
+                <td>56</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 66">15%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_ctypeslib_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/ctypeslib.py</a></td>
+                <td>187</td>
+                <td>144</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="43 187">23%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_fft___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/fft/__init__.py</a></td>
+                <td>7</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="7 7">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_fft_fftpack_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/fft/fftpack.py</a></td>
+                <td>129</td>
+                <td>104</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="25 129">19%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_fft_helper_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/fft/helper.py</a></td>
+                <td>86</td>
+                <td>65</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="21 86">24%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_fft_info_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/fft/info.py</a></td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 2">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/__init__.py</a></td>
+                <td>39</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="39 39">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib__datasource_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/_datasource.py</a></td>
+                <td>177</td>
+                <td>140</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="37 177">21%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib__iotools_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/_iotools.py</a></td>
+                <td>392</td>
+                <td>337</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="55 392">14%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib__version_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/_version.py</a></td>
+                <td>77</td>
+                <td>61</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="16 77">21%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_arraypad_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/arraypad.py</a></td>
+                <td>368</td>
+                <td>343</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="25 368">7%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_arraysetops_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/arraysetops.py</a></td>
+                <td>112</td>
+                <td>102</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 112">9%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_arrayterator_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/arrayterator.py</a></td>
+                <td>73</td>
+                <td>60</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="13 73">18%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_financial_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/financial.py</a></td>
+                <td>109</td>
+                <td>92</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="17 109">16%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_format_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/format.py</a></td>
+                <td>234</td>
+                <td>206</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="28 234">12%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_function_base_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/function_base.py</a></td>
+                <td>1303</td>
+                <td>1202</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="101 1303">8%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_index_tricks_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/index_tricks.py</a></td>
+                <td>255</td>
+                <td>190</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="65 255">25%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_info_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/info.py</a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_nanfunctions_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/nanfunctions.py</a></td>
+                <td>227</td>
+                <td>201</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="26 227">11%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_npyio_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/npyio.py</a></td>
+                <td>762</td>
+                <td>712</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="50 762">7%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_polynomial_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/polynomial.py</a></td>
+                <td>391</td>
+                <td>333</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="58 391">15%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_scimath_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/scimath.py</a></td>
+                <td>55</td>
+                <td>35</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="20 55">36%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_shape_base_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/shape_base.py</a></td>
+                <td>207</td>
+                <td>184</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="23 207">11%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_stride_tricks_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/stride_tricks.py</a></td>
+                <td>61</td>
+                <td>50</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="11 61">18%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_twodim_base_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/twodim_base.py</a></td>
+                <td>123</td>
+                <td>100</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="23 123">19%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_type_check_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/type_check.py</a></td>
+                <td>98</td>
+                <td>75</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="23 98">23%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_ufunclike_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/ufunclike.py</a></td>
+                <td>23</td>
+                <td>17</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 23">26%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_lib_utils_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/lib/utils.py</a></td>
+                <td>519</td>
+                <td>437</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="82 519">16%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_linalg___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/linalg/__init__.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_linalg_info_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/linalg/info.py</a></td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 2">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_linalg_linalg_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/linalg/linalg.py</a></td>
+                <td>617</td>
+                <td>546</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="71 617">12%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_ma___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/ma/__init__.py</a></td>
+                <td>11</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="11 11">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_ma_core_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/ma/core.py</a></td>
+                <td>2438</td>
+                <td>1900</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="538 2438">22%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_ma_extras_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/ma/extras.py</a></td>
+                <td>615</td>
+                <td>527</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="88 615">14%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_matrixlib___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/matrixlib/__init__.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_matrixlib_defmatrix_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/matrixlib/defmatrix.py</a></td>
+                <td>292</td>
+                <td>233</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="59 292">20%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/__init__.py</a></td>
+                <td>10</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="10 10">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial__polybase_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/_polybase.py</a></td>
+                <td>316</td>
+                <td>235</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="81 316">26%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial_chebyshev_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/chebyshev.py</a></td>
+                <td>463</td>
+                <td>402</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="61 463">13%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial_hermite_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/hermite.py</a></td>
+                <td>422</td>
+                <td>368</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="54 422">13%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial_hermite_e_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/hermite_e.py</a></td>
+                <td>419</td>
+                <td>365</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="54 419">13%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial_laguerre_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/laguerre.py</a></td>
+                <td>408</td>
+                <td>355</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="53 408">13%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial_legendre_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/legendre.py</a></td>
+                <td>416</td>
+                <td>363</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="53 416">13%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial_polynomial_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/polynomial.py</a></td>
+                <td>345</td>
+                <td>295</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="50 345">14%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_polynomial_polyutils_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/polynomial/polyutils.py</a></td>
+                <td>65</td>
+                <td>48</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="17 65">26%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_random___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/random/__init__.py</a></td>
+                <td>13</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="12 13">92%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_random_info_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/random/info.py</a></td>
+                <td>3</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="3 3">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_testing___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/testing/__init__.py</a></td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 6">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_testing_decorators_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/testing/decorators.py</a></td>
+                <td>64</td>
+                <td>56</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="8 64">12%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_testing_nosetester_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/testing/nosetester.py</a></td>
+                <td>167</td>
+                <td>134</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="33 167">20%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_testing_utils_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/testing/utils.py</a></td>
+                <td>781</td>
+                <td>688</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="93 781">12%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_numpy_version_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/numpy/version.py</a></td>
+                <td>7</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="6 7">86%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_pkg_resources___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/pkg_resources/__init__.py</a></td>
+                <td>1536</td>
+                <td>1534</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 1536">1%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_pkg_resources__vendor_six_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/pkg_resources/_vendor/six.py</a></td>
+                <td>444</td>
+                <td>442</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 444">1%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_pkg_resources_extern___init___py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/pkg_resources/extern/__init__.py</a></td>
+                <td>35</td>
+                <td>32</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="3 35">9%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__apipkg_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_apipkg.py</a></td>
+                <td>138</td>
+                <td>119</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="19 138">14%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__builtin_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_builtin.py</a></td>
+                <td>188</td>
+                <td>187</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="1 188">1%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__code_code_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_code/code.py</a></td>
+                <td>523</td>
+                <td>521</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 523">1%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__error_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_error.py</a></td>
+                <td>50</td>
+                <td>47</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="3 50">6%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__io_terminalwriter_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_io/terminalwriter.py</a></td>
+                <td>239</td>
+                <td>160</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="79 239">33%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__path_common_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_path/common.py</a></td>
+                <td>266</td>
+                <td>166</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="100 266">38%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__path_local_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_path/local.py</a></td>
+                <td>637</td>
+                <td>490</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="147 637">23%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_py__xmlgen_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/py/_xmlgen.py</a></td>
+                <td>170</td>
+                <td>168</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="2 170">1%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_pytest_cov_compat_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/pytest_cov/compat.py</a></td>
+                <td>19</td>
+                <td>15</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="4 19">21%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_pytest_cov_engine_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/pytest_cov/engine.py</a></td>
+                <td>166</td>
+                <td>153</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="13 166">8%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_travis_virtualenv_python3_4_6_lib_python3_4_site-packages_pytest_cov_plugin_py.html">/home/travis/virtualenv/python3.4.6/lib/python3.4/site-packages/pytest_cov/plugin.py</a></td>
+                <td>157</td>
+                <td>131</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="26 157">17%</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <p id="no_rows">
+        No items found using the specified filter.
+    </p>
+</div>
+
+<div id="footer">
+    <div class="content">
+        <p>
+            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.2</a>,
+            created at 2017-11-21 17:51
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

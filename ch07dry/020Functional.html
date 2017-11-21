@@ -1,0 +1,2286 @@
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 7]> <html lang="en" class="lt-ie9 lt-ie8 no-js"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="lt-ie9 no-js"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset=utf-8 />
+    <meta name="author" content="UCL" />
+    <meta name="description" content="UCL Homepage" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- social meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uclnews">
+    <meta name="twitter:title" content="UCL - London's Global University">
+    <meta name="twitter:description" content="UCL (University College London) is London's leading multidisciplinary university, with 8,000 staff and 25,000 students.">
+    <meta name="twitter:creator" content="@UCLWAMS">
+    <meta name="twitter:image:src" content="http://www.ucl.ac.uk/visual-identity/logos/standalone.png">
+    <meta property="og:image" content="http://www.ucl.ac.uk/visual-identity/logos/standalone.png" />
+    <meta property="og:title" content="UCL - London's Global University" />
+    <meta property="og:url" content="http://www.ucl.ac.uk" />
+    <meta property="og:site_name" content="UCL" />
+    <meta property="og:description" content="UCL (University College London) is London's leading multidisciplinary university, with 8,000 staff and 25,000 students." />
+    <meta property="og:type" content="website" />
+    <meta property="og:profile_id" content="uclofficial" />
+    <!-- end social meta -->
+
+  <title>Functional Programming</title>
+
+  <link href="/rsd-engineeringcourse/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/rsd-engineeringcourse/css/jekyll-styles.css" rel="stylesheet" type="text/css">
+  <link href="/rsd-engineeringcourse/site-styles/local_styles.css" rel="stylesheet" type="text/css">
+  <link href="/rsd-engineeringcourse/site-styles/ipython.css" rel="stylesheet" type="text/css">
+
+  <link rel="shortcut icon" href="/rsd-engineeringcourse/images/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="/rsd-engineeringcourse/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/rsd-engineeringcourse/favicon-144.png">
+
+  <script src="/rsd-engineeringcourse/js/lib/modernizr-custom.js"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+
+    <script>
+      var cuttingTheMustard = document.querySelector && window.localStorage && window.addEventListener;
+
+      Modernizr.load({
+        //cutting the mustard as used by the BBC
+        test: cuttingTheMustard
+        //if old browser load the shiv
+        ,
+        nope: [
+          '/rsd-engineeringcourse/js/lib/html5shiv-printshiv.min.js', '/rsd-engineeringcourse/js/lib/respond.min.js'
+        ]
+      });
+      //set conditional assets for main.js
+      var globalSiteSpecificVars = {
+        pathToJquery: "/rsd-engineeringcourse/js/lib/jquery-1.9.1.min",
+        googleAnalyticsIdsArray: [] //specify array of site specific id's NOT UCL generic UA-943297-1
+      }
+      if (cuttingTheMustard) {
+        globalSiteSpecificVars.pathToJquery = '/rsd-engineeringcourse/js/lib/jquery-2.1.1.min';
+      }
+    </script>
+    <script src="/rsd-engineeringcourse/js/lib/require.min.js"></script>
+    <script src="/rsd-engineeringcourse/js/main.js"></script>
+    <script>
+      require.config({
+        baseUrl: '/rsd-engineeringcourse/js/lib'
+      });
+        require(["app/general", "app/searchWithAutoComplete", "app/tabs"]);//load the default stuff
+    </script>
+</head>
+
+<body id="index" class="layout-vertical layout-vertical--nav-1col">
+
+  <header class="header header--desktop">
+
+  <a class="header__close" href="#">
+    <img src="/rsd-engineeringcourse/images/close.png" class="lazy" data-src="//static.ucl.ac.uk/indigo/images/close.png" alt="X" />Close</a>
+
+  <div class="masthead">
+
+  <div class="wrapper clearfix">
+
+      <div class="masthead__search">
+					<form action="#" method="get">
+						<div class="search-form">
+							<input type="search" placeholder="Search UCL websites, people and more" class="search-form__input search-form__input--search" value="">
+						</div>
+						<input type="submit" name="sumbit" value="Go" class="btn search-form__input search-form__input--submit" />
+					</form>
+				</div>
+
+
+				<nav class="masthead__nav m-clear">
+					<ul class="masthead__list">
+						<li class="masthead__item"><a href="index.php" class="masthead__link">UCL Home</a>
+						</li>
+						<li class="masthead__item"><a href="prospective-students.php" class="masthead__link">Prospective students</a>
+						</li>
+						<li class="masthead__item"><a href="current-students.php" class="masthead__link">Current students</a>
+						</li>
+						<li class="masthead__item"><a href="staff.php" class="masthead__link">Staff</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+</div><!-- end .masthead -->
+
+
+  <div class="wrapper">
+
+    <div class="photograph">
+  <div class="brand">
+    <p class="brand__heading">MPHYG001: Research Software Engineering With Python</p>
+    <a href="/" class="brand__link"><span class="visually-hidden">Home</span></a>
+    <img src="//cdn.ucl.ac.uk/img/blank.gif" data-src="//static.ucl.ac.uk/indigo/images/ucl-logo.svg" alt="UCL logo" id="logo" class="brand__logo lazy">  
+  </div>
+</div>
+
+
+    <div class="sidebar">
+
+      <nav class="nav nav--mobile">
+        <ul>
+          
+
+
+
+
+        </ul>
+      </nav>
+
+      <nav class="nav nav--left">
+        <ul>
+          
+
+ <li class="active"> <a href="/rsd-engineeringcourse/ch00python/">Introduction to Python</a><ul> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/00pythons.html">Many kinds of Python</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/010exemplar.html">An example program</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/015variables.html">Variables</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/016using_functions.html">Using Functions</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/023types.html">Types</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/025containers.html">Containers</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/028dictionaries.html">Dictionaries</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/029structures.html">Structures</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/030MazeSolution.html">Maze Solution</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/032conditionality.html">Conditionality</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/035looping.html">Looping</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/036MazeSolution2.html">Maze Control Solution</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/037comprehensions.html">Comprehensions</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/038SolutionComprehension.html">Maze comprehension solution.</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/04functions.html">Defining functions</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/050import.html">Modules</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch00python/101Classes.html">Classes</a> </li> </ul> </li><li class="active"> <a href="/rsd-engineeringcourse/ch01data/">Research Data in Python</a><ul> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/060files.html">Working with files</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/061internet.html">Internet</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/062csv.html">CSV</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/064JsonYamlXML.html">Structured Datafiles</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/065MazeSaved.html">Maze Files Solution</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/066QuakeExercise.html">Earthquakes Exercise</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/068QuakesSolution.html">Quakes Solution</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/072plotting.html">Plotting</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/082NumPy.html">Numerical Python</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/084Boids.html">The Boids</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch01data/110Capstone.html">Understanding the Exemplar</a> </li> </ul> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch02git/">Version Control</a><ul> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/01Intro.html">Introduction to Version Control</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/02Solo.html">Solo Git</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/03Mistakes.html">Fixing Mistakes</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/04Publishing.html">Publishing</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/05Collaboration.html">Collaboration</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/06ForkAndPull.html">Fork and Pull</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/09GitTheory.html">Git Theory</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/10Branches.html">Branches</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/11Miscellany.html">Git miscellany</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/12Remotes.html">Remotes</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/13Rebase.html">Rebase</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch02git/14Bisect.html">Bisect</a> </li> </ul> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch03tests/">Testing</a><ul> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/01testingbasics.html">Testing Basics</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/02SaskatchewanFields.html">The Fields of Saskatchewan</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/03pytest.html">Test Frameworks</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/04EnergyExample.html">Energy Example</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/05Mocks.html">Mocks</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/06Debugger.html">Debugger</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/07CI.html">Continuous Integration</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch03tests/08DiffusionExample.html">Diffusion Example</a> </li></ul> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch04packaging/">Software Projects</a><ul> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/010Installation.html">Installing Libraries</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/01Libraries.html">Libraries</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/025TextFiles.html">Writing Libraries</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/02Argparse.html">Argparse</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/03Packaging.html">Packaging</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/04documentation.html">Documentation</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/05Process.html">Agile and Waterfall</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/06Licensing.html">Licensing</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch04packaging/07Issues.html">Issue Tracking</a> </li> </ul> </li><li class="active"> <a href="/rsd-engineeringcourse/ch05construction/">Construction and Design</a><ul> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/01introduction.html">Construction</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/02conventions.html">Coding Conventions</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/03comments.html">Comments</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/05refactoring.html">Refactoring</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/06objects.html">Object Refactorings</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/08objects.html">Object Oriented Design</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/09patterns.html">Design Patterns</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch05construction/10boids.html">Exercise - Boids</a> </li> </ul> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch07dry/">Advanced Programming Techniques</a><ul> <li class="active"> <a href="/rsd-engineeringcourse/ch07dry/01intro.html">Don't Repeat Yourself</a> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch07dry/020Functional.html">Functional Programming</a> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch07dry/025Iterators.html">Iterators, Generators, Decorators, and Contexts</a> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch07dry/040Exceptions.html">Exceptions</a> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch07dry/050Operators.html">Operator Overloading</a> </li> <li class="active"> <a href="/rsd-engineeringcourse/ch07dry/060Metaprogramming.html">Metaprogramming</a> </li> </ul> </li><li class="active"> <a href="/rsd-engineeringcourse/ch08performance/">Programming for Speed</a><ul><li class="inactive"> <a href="/rsd-engineeringcourse/ch08performance/010intro.html">Two Mandelbrots</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch08performance/015mandels.html">Faster Mandelbrots?</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch08performance/020numpy.html">NumPy</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch08performance/040cython.html">Cython</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/ch08performance/050scaling.html">Scaling</a> </li> </ul> </li><li class="active"> <a href="/rsd-engineeringcourse/session99/">Installation</a><ul><li class="inactive"> <a href="/rsd-engineeringcourse/session99/linux.html">Linux</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/session99/mac.html">Mac OSX</a> </li> <li class="inactive"> <a href="/rsd-engineeringcourse/session99/windows.html">Windows</a> </li></ul> </li> 
+
+        </ul>
+      </nav>
+
+    </div>
+    <!-- end .sidebar -->
+
+    <nav class="nav nav--top">
+      <ul>
+        
+      </ul>
+    </nav>
+
+  </div>
+  <!-- end .wrapper -->
+
+  </header>
+  <!-- end .header -->
+
+  <div class="site-content wrapper">
+
+    <header class="header header--mobile default-header">
+      <a class="header__open" href="#">
+        <img src="/rsd-engineeringcourse/images/ucl-menu.svg" alt="Menu" />
+      </a>
+    </header>
+
+    <div class="site-content__inner clearfix">
+      <div class="site-content__body">
+
+          
+            <nav class="breadcrumb clearfix">
+              <ul class="breadcrumb__list">
+                <li class="breadcrumb__item"><a href="http://www.ucl.ac.uk/">UCL</a></li>
+
+  
+    <li class="breadcrumb__item"><a href="http://www.ucl.ac.uk/ISD">ISD</a></li>
+  
+    <li class="breadcrumb__item"><a href="http://www.ucl.ac.uk/isd/services">Our services</a></li>
+  
+    <li class="breadcrumb__item"><a href="http://www.ucl.ac.uk/isd/services/research-it">Research IT</a></li>
+  
+    <li class="breadcrumb__item"><a href="http://www.ucl.ac.uk/isd/services/research-it/training">Training</a></li>
+  
+
+<li class="breadcrumb__item"><a href="/rsd-engineeringcourse/">MPHYG0001</a></li>
+
+
+
+              </ul>
+            </nav>
+           <div class="site-content__main">
+            
+               <div id="slidelink">
+                 <a href="/rsd-engineeringcourse/ch07dry/020Functional.ipynb">Notebook download</a>
+               </div>
+            
+            
+          
+          
+
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Functional-programming">Functional programming<a class="anchor-link" href="#Functional-programming">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Functional-Programming">Functional Programming<a class="anchor-link" href="#Functional-Programming">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Understanding to think in a <em>functional programming</em> style is almost as
+important as object orientation for building DRY, clear scientific software,
+and is just as conceptually difficult.</p>
+<p>Programs are composed of functions: they take data in (which we call
+<em>parameters</em> or <em>arguments</em>) and send data out (through <code>return</code> statements.)</p>
+<p>A conceptual trick which is often used by computer scientists to teach the core
+idea of functional programming is this: to write a program,
+in theory, you only ever need functions with <strong>one</strong> argument, even when you think you need two or more. Why?</p>
+<p>Let's define a program to add two numbers:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>11</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How could we do this, in a fictional version of Python which only defined functions of one argument?
+In order to understand this, we'll have to understand several of the concepts
+of functional programming. Let's start with a program which just adds five to
+something:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_five</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="mi">5</span>
+
+<span class="n">add_five</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>11</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>OK, we could define lots of these, one for each number we want to add. But that
+would be infinitely repetitive. So, let's try to metaprogram that: we want a
+function which returns these add_N() functions.</p>
+<p>Let's start with the easy case: a function which returns a function which adds 5 to something:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate_five_adder</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">_add_five</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="mi">5</span>
+    <span class="k">return</span> <span class="n">_add_five</span>
+
+<span class="n">coolfunction</span> <span class="o">=</span> <span class="n">generate_five_adder</span><span class="p">()</span>
+<span class="n">coolfunction</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>12</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>OK, so what happened there? Well, we defined a function <strong>inside</strong> the other function. We can always do that:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">thirty_function</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">times_three</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="mi">3</span>
+    <span class="k">def</span> <span class="nf">add_seven</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="mi">7</span>
+    <span class="k">return</span> <span class="n">times_three</span><span class="p">(</span><span class="n">add_seven</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">thirty_function</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>30</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we do this, the functions enclosed inside the outer function are <strong>local</strong> functions, and can't be seen outside:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_seven</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-6fa1bcd39365&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>add_seven
+
+<span class="ansi-red-fg">NameError</span>: name &#39;add_seven&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There's not really much of a difference between functions and other variables
+in python. A function is just a variable which can have () put after it to call
+the code!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">thirty_function</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;function thirty_function at 0x2b094c843ea0&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">thirty_function</span><span class="p">,</span> <span class="n">add_five</span><span class="p">,</span> <span class="n">add</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">fun</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;function thirty_function at 0x2b094c843ea0&gt;
+&lt;function add_five at 0x2b094c843400&gt;
+&lt;function add at 0x2b094c8432f0&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And we know that one of the things we can do with a variable is <code>return</code> it. So we can return a function, and then call it outside:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">deferred_greeting</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">greet</span>
+
+<span class="n">friendlyfunction</span><span class="o">=</span><span class="n">deferred_greeting</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Do something else</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Just passing the time...&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Just passing the time...
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># OK, Go!</span>
+<span class="n">friendlyfunction</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So now, to finish this, we just need to return a function to add an arbitrary amount:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">define_adder</span><span class="p">(</span><span class="n">increment</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">adder</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">increment</span>
+    <span class="k">return</span> <span class="n">adder</span>
+
+<span class="n">add_3</span><span class="o">=</span><span class="n">define_adder</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add_3</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>12</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can make this even prettier: let's make another variable pointing to our define_adder() function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="n">define_adder</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And now we can do the real magic:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="mi">8</span><span class="p">)(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>13</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Closures">Closures<a class="anchor-link" href="#Closures">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You may have noticed something a bit weird:</p>
+<p>In the definition of <code>define_adder</code>, <code>increment</code> is a local variable. It should have gone out of scope and died at the end of the definition. How can the amount the returned adder function is adding still be kept?</p>
+<p>This is called a <strong>closure</strong>. In Python, whenever a function definition references a variable in the surrounding scope, it is preserved within the function definition.</p>
+<p>You can close over global module variables as well:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;James&quot;</span>
+
+<span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="n">greet</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello,  James
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And note that the closure stores a reference to the variable in the surrounding scope: ("Late Binding")</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Matt&quot;</span>
+
+<span class="n">greet</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello,  Matt
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Map-and-Reduce">Map and Reduce<a class="anchor-link" href="#Map-and-Reduce">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We often want to apply a function to each variable in an array, to return a new array. We can do this with a list comprehension:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numbers</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">add_five</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[5, 6, 7, 8, 9, 10, 11, 12, 13, 14]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But this is sufficiently common that there's a quick built-in:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">add_five</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[5, 6, 7, 8, 9, 10, 11, 12, 13, 14]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This <strong>map</strong> operation is really important conceptually when understanding
+efficient parallel programming: different computers can apply the <em>mapped</em>
+function to their input at the same time. We call this Single Program, Multiple
+Data. (SPMD) <strong>map</strong> is half of the <strong>map-reduce</strong> functional programming
+paradigm which is key to the efficient operation of much of today's "data
+science" explosion.</p>
+<p>Let's continue our functional programming mind-stretch by looking at <strong>reduce</strong> operations.</p>
+<p>We very often want to loop with some kind of accumulator, such as when finding a mean, or finding a maximum:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">summer</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="nb">sum</span><span class="o">+=</span><span class="n">x</span>
+        
+    <span class="k">return</span> <span class="nb">sum</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">summer</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>45.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">my_max</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="c1"># Start with the smallest possible number</span>
+    <span class="n">highest</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">min</span>
+    
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">highest</span><span class="p">:</span>
+            <span class="n">highest</span><span class="o">=</span><span class="n">x</span>
+            
+    <span class="k">return</span> <span class="n">highest</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_max</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>These operations, where we have some variable which is building up a result,
+and the result is updated with some operation, can be gathered together as a
+functional program, taking in the operation to be used to combine results as an
+argument:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">accumulate</span><span class="p">(</span><span class="n">initial</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">accumulator</span><span class="o">=</span><span class="n">initial</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">accumulator</span><span class="o">=</span><span class="n">operation</span><span class="p">(</span><span class="n">accumulator</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">accumulator</span>
+
+<span class="k">def</span> <span class="nf">my_sum</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">accumulate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">_add</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bigger</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span><span class="o">&gt;</span><span class="n">a</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">my_max</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">accumulate</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">bigger</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="n">my_max</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, because these operations, _bigger, and _add, are such that e.g. (a+b)+c = a+(b+c) , i.e. they are <strong>associative</strong>, we could apply our accumulation
+to the left half and the right half of the array, each on a different computer, and then combine the two halves:</p>
+<p>1+2+3+4=(1+2)+(3+4)</p>
+<p>Indeed, with a bigger array, we can divide-and-conquer more times:</p>
+<p>1+2+3+4+5+6+7+8=((1+2)+(3+4))+((5+6)+(7+8))</p>
+<p>So with enough parallel computers, we could do this operation on eight numbers
+in three steps: first, we use four computers to do one  each of the pairwise
+adds.</p>
+<p>Then, we use two computers to add the four totals.</p>
+<p>Then, we use one of the computers to do the final add of the two last numbers.</p>
+<p>You might be able to do the maths to see that with an N element list, the
+number of such steps is proportional to the logarithm of N.</p>
+<p>We say that with enough computers, reduction operations are O(ln N)</p>
+<p>This course isn't an introduction to algorithms, but we'll talk more about this
+O() notation when we think about programming for performance.</p>
+<p>Anyway, this accumulate-under-an-operation process, is so fundamental to
+computing that it's usually in standard libraries for languages which allow
+functional programming:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
+
+<span class="k">def</span> <span class="nf">my_max</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">bigger</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
+
+<span class="n">my_max</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Lambda-Functions">Lambda Functions<a class="anchor-link" href="#Lambda-Functions">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When doing functional programming, we often want to be able to define a function on the fly:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">most_Cs_in_any_sequence</span><span class="p">(</span><span class="n">sequences</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">count_Cs</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    
+    <span class="n">counts</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="n">count_Cs</span><span class="p">,</span> <span class="n">sequences</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">most_Gs_in_any_sequence</span><span class="p">(</span><span class="n">sequences</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sequence</span><span class="p">:</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">),</span><span class="n">sequences</span><span class="p">))</span>
+
+<span class="n">data</span><span class="o">=</span><span class="p">[</span>
+    <span class="s2">&quot;CGTA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CGGGTAAACG&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GATTACA&quot;</span>
+<span class="p">]</span>
+
+<span class="n">most_Gs_in_any_sequence</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The syntax here is that these two definitions are identical:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">func_name</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="p">:</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+
+<span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>lambda defines an "anonymous" function.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">most_of_given_base_in_any_sequence</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">sequence</span><span class="p">:</span> <span class="n">sequence</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">base</span><span class="p">),</span> <span class="n">sequences</span><span class="p">))</span>
+
+<span class="n">most_of_given_base_in_any_sequence</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above fragment defined a lambda function as a <strong>closure</strong> over <code>base</code>. If you understood that, you've got it!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To double all elements in an array:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">my_max</span><span class="p">(</span><span class="n">data</span><span class="p">):</span> <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span> <span class="k">else</span> <span class="n">b</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
+
+<span class="n">my_max</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-functional-programming-for-numerical-methods">Using functional programming for numerical methods<a class="anchor-link" href="#Using-functional-programming-for-numerical-methods">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Probably the most common use in research computing for functional programming
+is the application of a numerical method to a function. For example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="k">import</span> <span class="n">newton</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">linspace</span><span class="p">,</span> <span class="n">zeros</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">solve_me</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">newton</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">newton</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+
+<span class="n">xs</span><span class="o">=</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">solved</span><span class="o">=</span><span class="p">[</span><span class="n">xs</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span><span class="n">xs</span><span class="p">)),</span><span class="n">xs</span><span class="p">,</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">))]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">solved</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.0 -3.4419051426429775e-21
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;matplotlib.lines.Line2D at 0x2b096c27e0f0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x2b096c27e2e8&gt;]</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+AAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sometimes such tools return another function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">derivative</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">eps</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">_func_derived</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">eps</span><span class="p">)</span><span class="o">-</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">eps</span>
+    
+    <span class="k">return</span> <span class="n">_func_derived</span>
+
+<span class="n">straight</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">straight</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5.00999999999987</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">derived</span><span class="o">=</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span><span class="n">xs</span><span class="p">)),</span><span class="n">xs</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span><span class="mf">0.01</span><span class="p">),</span><span class="n">xs</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">derived</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newton</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span><span class="mf">0.01</span><span class="p">),</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.49500000000000044
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+nGmrLDIAAAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of course, coding your own numerical methods is bad:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.misc</span>
+
+<span class="k">def</span> <span class="nf">derivative</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_func_derived</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">scipy</span><span class="o">.</span><span class="n">misc</span><span class="o">.</span><span class="n">derivative</span><span class="p">(</span><span class="n">solve_me</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_func_derived</span>
+
+<span class="n">newton</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">solve_me</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you've done a moderate amount of calculus, then you'll find similarities
+between functional programming in computer science and Functionals in the
+calculus of variations.</p>
+
+</div>
+</div>
+</div>
+ 
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- end .site-content -->
+
+  <footer class="footer wrapper">
+  <div class="footer__inner clearfix">
+             <article class="block block--col-1">
+                <h2 class="as-h5">Facilities</h2>
+                <ul class="footer__list list-unstyled">
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/departments/faculties">Faculties and departments</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/library/">Library</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/museums">Museums and Collections</a></li>
+					<li class="footer__item"><a href="http://www.thebloomsbury.com/">UCL Bloomsbury Theatre</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/maps">Maps and buildings</a></li>
+				</ul>
+            </article>
+            <article class="block block--col-2">
+                <h2 class="as-h5">Locations</h2>
+                <ul class="footer__list list-unstyled">
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/london">UCL and London</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/australia">UCL Australia</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/qatar">UCL Qatar</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/global">UCL Global</a></li>
+				</ul>
+            </article>
+            <article class="block block--col-3">
+                <h2 class="as-h5">Connect with us</h2>
+                <ul class="footer__list list-unstyled">
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/alumni">Alumni</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/enterprise">Businesses</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/media">Media Relations</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/hr/jobs/">Jobs</a></li>
+					<li class="footer__item"><a href="http://www.ucl.ac.uk/makeyourmark">Give to UCL</a></li>
+				</ul>
+
+      </article>
+  
+    <hr class="clear">
+    <ul class="footer__list list-unstyled zero-bottom">
+      <li class="footer__item text-muted small">University College London,&nbsp;Gower Street,&nbsp;London,&nbsp;WC1E 6BT&nbsp;Tel:&nbsp;+44&nbsp;(0)&nbsp;20 7679 2000</li>
+    </ul>
+    <ul class="list-inline footer__list list-unstyled list-inline--divided">
+      <li class="text-muted small">Copyright © 2017-11-21 17:59:30 +0000 UCL</li>
+      <li class="text-muted small"><a href="#">Disclaimer</a>
+      </li>
+      <li class="text-muted small"><a href="#">Freedom of Information</a>
+      </li>
+      <li class="text-muted small"><a href="#">Accessibility</a>
+      </li>
+      <li class="text-muted small"><a href="#">Privacy</a>
+      </li>
+      <li class="text-muted small"><a href="#">Cookies</a>
+      </li>
+      <li class="text-muted small"><a href="#">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+  <script src="/rsd-engineeringcourse/js/lib/require.min.js"></script>
+  <script src="/rsd-engineeringcourse/js/main.js"></script>
+    <script>
+      require.config({
+        baseUrl: '/rsd-engineeringcourse/js/lib'
+      });
+        require(["app/general", "app/searchWithAutoComplete", "app/tabs"]);//load the default stuff
+    </script>
+
+</body>
+
+</html>
+
